@@ -1,0 +1,1 @@
+# gerador_senhas_2026_vers-o_3
