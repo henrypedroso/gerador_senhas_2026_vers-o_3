@@ -122,6 +122,7 @@ label {
     background-color: var(--fundo-senha);
     height: 30px;
     width: 100%;
+    
 }
 
 .forca {
@@ -133,6 +134,8 @@ label {
 .fraca {
     width: 25%;
     background-color: #E71B32;
+    position: relative;
+    bottom: 30px;
 }
 
 .media {
