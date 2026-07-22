@@ -1,43 +1,42 @@
 const numeroSenha = document.querySelector('.parametro-senha__texto');
-
-let tamanhaSenha = 5;
+let tamanhoSenha = 5;
+numeroSenha.textContent = tamanhoSenha;
 
 const botoes = document.querySelectorAll('.parametro-senha__botao');
 
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
 
-function diminuiTamanho(){
-    if(tamanhaSenha > 1){
-        //tamanhaSenha = tamanhaSenha - 1;
-        tamanhaSenha--;
+function diminuiTamanho() {
+    if (tamanhoSenha > 1) {
+        // tamanhoSenha = tamanhoSenha-1;
+        tamanhoSenha--;
     }
-    
-    numeroSenha.textContent = tamanhaSenha;
+    numeroSenha.textContent = tamanhoSenha;
     geraSenha();
 }
-
-function aumentaTamanho(){
-    if(tamanhaSenha < 20){
-        //tamanhaSenha = tamanhaSenha + 1;
-        tamanhaSenha++;
+function aumentaTamanho() {
+    if (tamanhoSenha < 20) {
+        // tamanhoSenha = tamanhoSenha+1;
+        tamanhoSenha++;
     }
-    
-    numeroSenha.textContent = tamanhaSenha;
+    numeroSenha.textContent = tamanhoSenha;
     geraSenha();
 }
 
 const campoSenha = document.querySelector('#campo-senha');
 const checkbox = document.querySelectorAll('.checkbox');
 
-for(i = 0; i < checkbox.length; i++
+for (i = 0; i < checkbox.length; i++) {
     checkbox[i].onclick = geraSenha;
-)
+}
 
-const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQTSXYWZ';
+
+const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
 const letrasMinusculas = 'abcdefghijklmnopqrstuvxywz';
 const numeros = '0123456789';
-const simbolos = '!@%&?';
+const simbolos = '!@%*?';
+
 geraSenha();
 
 function geraSenha() {
@@ -55,15 +54,11 @@ function geraSenha() {
         alfabeto = alfabeto + simbolos;
     }
     console.log(alfabeto);
-    
-
-
     let senha = '';
-    for(let i = 0; i < tamanhaSenha; i++){
-        let numeroAleatorio = Math.random()*letrasMaiusculas.length;
+    for (let i = 0; i < tamanhoSenha; i++) {
+        let numeroAleatorio = Math.random() * alfabeto.length;
         numeroAleatorio = Math.floor(numeroAleatorio);
-        senha = senha + letrasMaiusculas[numeroAleatorio];
-        
+        senha = senha + alfabeto[numeroAleatorio];
     }
     campoSenha.value = senha;
 }
