@@ -58,6 +58,8 @@ function geraSenha () {
         alfabeto = alfabeto + simbolos;
     }
 
+    console.log(alfabeto);
+
     let senha = '';
     for(let i = 0; i < tamanhaSenha; i++){
         let numeroAleatorio = Math.random()*letrasMaiusculas.length;
